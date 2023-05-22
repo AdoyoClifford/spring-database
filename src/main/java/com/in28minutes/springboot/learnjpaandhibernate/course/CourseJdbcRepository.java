@@ -20,7 +20,7 @@ public class CourseJdbcRepository {
             """;
 
     private static String SELECT_QUERY = """
-            select from course where id = ?
+            select * from course where id = ?
             """;
 
 
