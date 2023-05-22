@@ -13,11 +13,17 @@ public class CourseJpaRepository {
 
     @PersistenceContext
     EntityManager entityManager;
+
     public void insertQuery(Course course) {
         entityManager.merge(course);
     }
 
-    public void findById(int id) {
+    public Course findById(int id) {
+        return entityManager.find(Course.class, id);
+    }
 
+    public void deleteId(int id) {
+        Course course = entityManager.find(Course.class, id);
+        entityManager.remove(course);
     }
 }
