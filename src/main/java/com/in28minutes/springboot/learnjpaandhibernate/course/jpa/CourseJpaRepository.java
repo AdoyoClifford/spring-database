@@ -18,11 +18,11 @@ public class CourseJpaRepository {
         entityManager.merge(course);
     }
 
-    public Course findById(int id) {
+    public Course selectById(int id) {
         return entityManager.find(Course.class, id);
     }
 
-    public void deleteId(int id) {
+    public void deleteById(int id) {
         Course course = entityManager.find(Course.class, id);
         entityManager.remove(course);
     }
