@@ -11,11 +11,11 @@ public class CourseJdbcRepository {
 
     private static String INSERT_QUERY = """ 
             insert into course (id,name,author)
-            values (1,'John','in28minutes');
+            values (?,?,?);
             """;
 
-    public void insertQuery() {
-        jdbcTemplate.update(INSERT_QUERY);
+    public void insertQuery(Course course) {
+        jdbcTemplate.update(INSERT_QUERY, course.getId(), course.getName(), course.getAuthor());
     }
 
 }

@@ -9,8 +9,9 @@ public class CourseJdbcCommandLineRunner implements CommandLineRunner {
 
     @Autowired
     private CourseJdbcRepository courseJdbcRepository;
+
     @Override
     public void run(String... args) throws Exception {
-        courseJdbcRepository.insertQuery();
+        courseJdbcRepository.insertQuery(new Course(1, "Learn AWS Now", "Adoyo"));
     }
 }
